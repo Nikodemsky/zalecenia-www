@@ -1,6 +1,6 @@
 ## Silnik CMS
 
-WordPress dla większych i standardowych witryn, dla wszystkiego co "małe" (np. typu Landing Page) możliwe zastosowanie forka [ClassicPress](https://www.classicpress.net/)
+[WordPress](https://wordpress.org/) dla większych i standardowych witryn, dla wszystkiego co "małe" (np. typu Landing Page) możliwe zastosowanie forka [ClassicPress](https://www.classicpress.net/)
 
 ---
 
@@ -33,3 +33,7 @@ WordPress dla większych i standardowych witryn, dla wszystkiego co "małe" (np.
 
 Dla bardzo małych instalacji albo [Bogo](https://wordpress.org/plugins/bogo/) albo [Sublanguage](https://github.com/maximeschoeni/sublanguage).<br>
 Wszystko cokolwiek bardziej skomplikowanego wymaga Polylang lub WPML ze względu na wsparcie innych wtyczek.
+
+---
+
+## Dodatkowe zabezpieczenia

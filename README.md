@@ -1,6 +1,6 @@
 ## Silnik CMS
 
-[WordPress](https://wordpress.org/) dla większych i standardowych witryn, dla wszystkiego co "małe" (np. typu Landing Page) możliwe zastosowanie forka [ClassicPress](https://www.classicpress.net/)
+[WordPress](https://wordpress.org/) dla większych i standardowych witryn, dla wszystkiego co "małe" (np. typu Landing Page) możliwe zastosowanie forka [ClassicPress](https://www.classicpress.net/).
 
 ---
 

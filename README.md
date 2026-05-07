@@ -69,7 +69,7 @@ Wszystko cokolwiek bardziej skomplikowanego wymaga Polylang lub WPML ze względu
 
 ### Dodatkowe zapisy dla .htaccess
 
-1. Odmowa dostępu z zewnątrz do plików konfiguracyjnych i WordPressowego readme.
+1. Odmowa dostępu z zewnątrz do plików konfiguracyjnych i WordPressowego readme
 ```
 <FilesMatch "wp-config.*\.php|\.htaccess|readme\.html">
 Order allow,deny
@@ -172,10 +172,10 @@ add_filter( 'style_loader_src', 'my_remove_src_version' );
 ```
 add_filter('wp_is_application_passwords_available', '__return_false');
 ```
-- używane jedynie w bardzo specyficznych przypadkach i domyślnie nie są wymagane.
+\- używane jedynie w bardzo specyficznych przypadkach i domyślnie nie są wymagane.
 
 3. Wyłączenie XMLRPC
 ```
 add_filter('xmlrpc_enabled', '__return_false');
 ```
-- wskazane jest również [zablokowanie w .htaccess](#blokada-xmlrpc)
+\- wskazane jest również [zablokowanie w .htaccess](#blokada-xmlrpc)

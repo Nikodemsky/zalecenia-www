@@ -81,6 +81,65 @@ Deny from all
 RewriteCond %{QUERY_STRING} author=\d
 RewriteRule ^ /? [L,R=301]
 ```
+<a name="blokada-xmlrpc"></a>
+3. Kompletne zablokowanie XMLRPC
+```
+<files xmlrpc.php>
+Order allow,deny
+Deny from all
+</files>
+```
+4. Blokada przetwarzania plików .php w folderze /wp-includes/, z wyjątkiem tinymce i ms-files
+```
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^wp-admin/includes/ - [F,L]
+RewriteRule !^wp-includes/ - [S=3]
+RewriteRule ^wp-includes/[^/]+\.php$ - [F,L]
+RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
+RewriteRule ^wp-includes/theme-compat/ - [F,L]
+</IfModule>
+```
+
+### Dodatkowe zapisy dla wp-config.php
+
+1. Jeśli jest możliwość, to przenosiny dostępów bazy do oddzielnego pliku
+```
+// DB credentials
+require_once "db-001x.php";
+```
+
+2. Kompletne wyłączenie wyświetlania informacji debugowania
+```
+// Debug
+define( 'WP_DEBUG', false );
+define( 'WP_DEBUG_LOG', false );
+define( 'WP_DEBUG_DISPLAY', false );
+if (! WP_DEBUG ) {
+	ini_set('display_errors', 0);
+}
+```
+
+3. Blokada edycji plików z poziomu panelu administracyjnego WP
+```
+define(	'DISALLOW_FILE_EDIT', true); // Disable file edits from CMS
+```
+
+4. Blokada wgrywania wtyczek/motywów (docelowo/domyślnie na produkcji)
+```
+define( 'DISALLOW_FILE_MODS', true );
+```
+
+### Dodatkowe zapisy dla folderu /wp-content/uploads/
+
+1. Blokada przetwarzania plików .php
+```
+<FilesMatch "\.(?i:php)$">
+	Order allow,deny
+	Deny from all
+</FilesMatch>
+```
 
 ### Dodatkowe zapisy dla functions.php
 
@@ -119,4 +178,4 @@ add_filter('wp_is_application_passwords_available', '__return_false');
 ```
 add_filter('xmlrpc_enabled', '__return_false');
 ```
-- tutaj możliwe, że potrzebne będa dodatkowe przekierowania lub kompletne zablokowanie.
+- wskazane jest również [zablokowanie w .htaccess](#blokada-xmlrpc)
